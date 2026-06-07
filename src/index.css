@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: #080810;
+    color: #F5F5F0;
+    overflow-x: hidden;
+  }
+
+  /* Custom Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080810;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1A1A2E;
+    border-radius: 4px;
+    border: 2px solid #080810;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #7C6BFF;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism utility */
+  .glass-card {
+    background: rgba(15, 15, 26, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    transform: translateY(-5px);
+    background: rgba(15, 15, 26, 0.85);
+    border-color: rgba(124, 107, 255, 0.3);
+    box-shadow: 0 10px 30px -10px rgba(124, 107, 255, 0.15);
+  }
+
+  .glass-navbar {
+    background: rgba(8, 8, 16, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  /* Subtle gradient texts */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #F5F5F0 0%, #A3A39E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #7C6BFF 0%, #00E5C4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-hybrid {
+    background: linear-gradient(135deg, #F5F5F0 10%, #7C6BFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Raw CSS Marquee */
+  .animate-marquee {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: marquee 35s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
